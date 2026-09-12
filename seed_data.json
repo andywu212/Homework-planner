@@ -1,0 +1,165 @@
+{
+  "_notes": "Hand-transcribed from syllabi and the AP Calc BC Q1 schedule PDF (as of 2026-09-12). Dates are M/D in the 2026-27 school year. Calc BC schedule is updated frequently by the teacher; replace that section when a new PDF is provided. Layout of the Calc PDF table is ambiguous in a few cells, so double-check against the PDF if something looks off.",
+
+  "classes": [
+    {"key": "calc", "name": "AP Calc BC", "canvas_match": null, "priority": 1, "color": "#3b82f6", "notes": "Not in Canvas feed. Schedule comes from teacher PDF. Deadline = last day to take quiz/test."},
+    {"key": "physics", "name": "AP Physics 1", "canvas_match": "AP Physics 1A-Smedberg", "priority": 1, "color": "#8b5cf6", "notes": "Task deadline = due date + 2 days. Weekly AP Classroom. Homework sets are multi-day. AP exam 2027-05-05 12:00 PM."},
+    {"key": "micro", "name": "AP Micro", "canvas_match": "AP Microeconomics-Broome", "priority": 1, "color": "#f59e0b", "notes": "All dates in Canvas. At least two reassessment opportunities on AT items."},
+    {"key": "world", "name": "AP World", "canvas_match": "AP World History A-Dewitt", "priority": 1, "color": "#10b981", "notes": "Reading notes on paper, photo uploaded by 7 AM day of quiz."},
+    {"key": "lang", "name": "AP Lang", "canvas_match": "AP Language and Comp A-Mcmullen", "priority": 1, "color": "#ef4444", "notes": "Sequential writing process. 10% off after due date, missing after deadline. PP has one date only."},
+    {"key": "envsus", "name": "Env Sustainability", "canvas_match": "Environmental Sustain A-Dethlefsen", "priority": 3, "color": "#84cc16", "notes": "Easy class. One short block on the due day."},
+    {"key": "health", "name": "Health", "canvas_match": "Hon Health Education A-Arnone", "priority": 3, "color": "#ec4899", "notes": "Easy class. Mostly in-class. One short block on the due day."}
+  ],
+
+  "grading": {
+    "all_tasks_weight": 0.90,
+    "practice_prep_weight": 0.10,
+    "quarter_ends": {"q1": "11/2", "q2": "1/25", "q3": "4/12"},
+    "no_late_work_last_n_days_of_quarter": 5
+  },
+
+  "no_school_days": ["9/7", "9/21", "10/16", "10/19", "11/2", "11/3", "11/26", "11/27", "12/24", "12/25", "12/28", "12/29", "12/30", "12/31", "1/1", "1/18"],
+  "half_days": ["11/23", "11/24", "11/25", "12/23"],
+  "early_dismissal": ["9/17"],
+  "other_dates": {"psat": "10/14", "ap_world_exam": "5/6", "ap_physics_1_exam": "5/5"},
+
+  "estimate_defaults_minutes": {
+    "calc": {"video_notes": 30, "problem_set": 45, "worksheet": 40, "fcq_prep": 20, "quiz_review_block": 30, "quiz_review_blocks": 2, "test_review_block": 45, "test_review_blocks": 4, "ap_classroom": 45},
+    "physics": {"pp_practice": 45, "pp_practice_blocks": 3, "lab_writeup": 75, "quiz_review_block": 30, "quiz_review_blocks": 2, "test_review_block": 45, "test_review_blocks": 4, "ap_classroom_weekly": 45},
+    "micro": {"pp": 30, "at_application_problems": 50, "frq": 45, "test_review_block": 45, "test_review_blocks": 3},
+    "world": {"reading_notes": 50, "quiz_review": 20, "at_project": 60},
+    "lang": {"pp": 30, "at_short": 45, "essay_step": 45, "essay_final_draft": 90},
+    "envsus": {"any": 25},
+    "health": {"any": 20},
+    "generic": {"pp": 30, "at": 45}
+  },
+
+  "recurring": [
+    {"class": "physics", "name": "AP Classroom weekly practice", "category": "PP", "cadence": "weekly", "minutes": 45, "any_day": true}
+  ],
+
+  "ap_world_reading_quizzes": [
+    {"date": "9/14", "sections": "1.5-1.7"},
+    {"date": "9/22", "sections": "2.1-2.2"},
+    {"date": "9/28", "sections": "2.3-2.4"},
+    {"date": "10/5", "sections": "2.5-2.7", "label_uncertain": true},
+    {"date": "10/12", "sections": "3.1-3.2"},
+    {"date": "10/19", "sections": "3.3-3.4", "label_uncertain": true},
+    {"date": "10/26", "sections": "4.1-4.2"},
+    {"date": "11/4", "sections": "4.3-4.4"},
+    {"date": "11/10", "sections": "4.5-4.6", "label_uncertain": true},
+    {"date": "11/16", "sections": "4.7-4.8"},
+    {"date": "11/23", "sections": "5.1-5.4"},
+    {"date": "11/30", "sections": "5.5-5.7"},
+    {"date": "12/7", "sections": "5.8-5.10"},
+    {"date": "12/14", "sections": "6.1-6.2"},
+    {"date": "1/4", "sections": "6.3-6.4"},
+    {"date": "1/11", "sections": "6.5-6.7", "label_uncertain": true},
+    {"date": "1/19", "sections": "7.1-7.2"},
+    {"date": "1/26", "sections": "7.3-7.4", "label_uncertain": true},
+    {"date": "2/1", "sections": "7.5-7.6"},
+    {"date": "2/8", "sections": "7.7-7.9"},
+    {"date": "2/16", "sections": "8.1-8.2"},
+    {"date": "2/22", "sections": "8.3-8.4"},
+    {"date": "3/1", "sections": "8.5-8.6", "label_uncertain": true},
+    {"date": "3/8", "sections": "8.7-8.9"},
+    {"date": "3/15", "sections": "9.1-9.2"},
+    {"date": "3/22", "sections": "9.3-9.4", "label_uncertain": true},
+    {"date": "4/5", "sections": "9.5-9.6"},
+    {"date": "4/13", "sections": "9.7-9.9"}
+  ],
+
+  "calc_bc_schedule": {
+    "source": "AP Calculus BC Schedule of Events and Assignments (1st Quarter), transcribed 2026-09-12",
+    "items": [
+      {"date": "9/8",  "type": "quiz",  "name": "FCQ 2", "reassess": false, "deadline": "9/10"},
+      {"date": "9/8",  "type": "notes", "name": "3.2 Notes"},
+      {"date": "9/9",  "type": "hw",    "name": "HW pp. 114-115 (1, 3-10, 44, 45)"},
+      {"date": "9/9",  "type": "quiz",  "name": "2.4 Quiz", "reassess": false, "deadline": "9/14"},
+      {"date": "9/9",  "type": "notes", "name": "3.3 Notes"},
+      {"date": "9/10", "type": "notes", "name": "Finish 3.3 Notes"},
+      {"date": "9/11", "type": "hw",    "name": "HW pp. 124-125 (5, 7, 9, 13, 14, 23, 24, 30-32, 38, 40)"},
+      {"date": "9/11", "type": "notes", "name": "3.4 Notes"},
+      {"date": "9/15", "type": "hw",    "name": "Quiz Reviews and 3.3 Practice Quiz", "due": "9/15", "deadline": "9/16"},
+
+      {"date": "9/14", "type": "quiz",  "name": "FCQ 3", "reassess": false, "deadline": "9/17"},
+      {"date": "9/14", "type": "notes", "name": "3.5 Notes"},
+      {"date": "9/15", "type": "review","name": "Quizizz Review 2.4-3.4 (study for quiz)"},
+      {"date": "9/16", "type": "quiz",  "name": "2.4-3.4 Quiz", "reassess": false, "deadline": "9/22"},
+      {"date": "9/16", "type": "notes", "name": "3.6 Notes"},
+      {"date": "9/17", "type": "hw",    "name": "HW p. 153 (13, 16, 17, 21)"},
+      {"date": "9/17", "type": "notes", "name": "Finish 3.6 Notes (early dismissal)"},
+      {"date": "9/18", "type": "hw",    "name": "HW pp. 145-147 (1-10, 46-49)"},
+      {"date": "9/21", "type": "hw",    "name": "Easy Chain Rule WS and Take Your Pulse WS"},
+
+      {"date": "9/22", "type": "quiz",  "name": "FCQ 4", "reassess": false, "deadline": "9/24"},
+      {"date": "9/22", "type": "notes", "name": "3.7 Notes"},
+      {"date": "9/23", "type": "hw",    "name": "HW p. 163 (1, 3, 5, 9, 13, 17)"},
+      {"date": "9/23", "type": "quiz",  "name": "3.6 Quiz", "reassess": true, "deadline": "9/28"},
+      {"date": "9/23", "type": "notes", "name": "Finish 3.7 Notes"},
+      {"date": "9/24", "type": "hw",    "name": "AP Problems on Implicit Differentiation", "due": "9/25", "deadline": "9/28"},
+      {"date": "9/24", "type": "hw",    "name": "pp. 162-164 (27, 29, 62) / finish classwork"},
+      {"date": "9/25", "type": "notes", "name": "3.8 Notes"},
+      {"date": "9/28", "type": "hw",    "name": "HW p. 171 (37-40)"},
+
+      {"date": "9/28", "type": "quiz",  "name": "FCQ 4a", "reassess": false, "deadline": "9/30"},
+      {"date": "9/28", "type": "notes", "name": "Finish 3.8 Notes"},
+      {"date": "9/29", "type": "hw",    "name": "Comic Strip WS"},
+      {"date": "9/29", "type": "review","name": "3.5-3.8 Quiz Review"},
+      {"date": "9/30", "type": "quiz",  "name": "3.5-3.8 Quiz", "reassess": false, "deadline": "10/6"},
+      {"date": "10/1", "type": "notes", "name": "3.9 Notes"},
+      {"date": "10/2", "type": "hw",    "name": "HW pp. 178-179 (1-25 odd, 43, 47, 48)"},
+      {"date": "10/2", "type": "review","name": "Start Chapter 3 Test Review"},
+
+      {"date": "10/5", "type": "quiz",  "name": "FCQ 5", "reassess": false, "deadline": "10/7"},
+      {"date": "10/5", "type": "notes", "name": "8.2 Notes"},
+      {"date": "10/6", "type": "hw",    "name": "HW p. 450 (1-8, 13-18, 21-26)"},
+      {"date": "10/6", "type": "notes", "name": "4.1 Notes"},
+      {"date": "10/7", "type": "hw",    "name": "HW p. 194 (11-13, 15, 17*, 18*) *use closed interval"},
+      {"date": "10/7", "type": "review","name": "Chapter 3 Test Review"},
+      {"date": "10/8", "type": "hw",    "name": "AP Classroom: Unit 2 Progress Checks MCQ A & B, Unit 3 Progress Check MCQ", "reassess": false, "due": "10/8", "deadline": "10/9 7:45 AM"},
+      {"date": "10/8", "type": "review","name": "AP Classroom Unit 2 & 3 Student Practice; Chapter 3 Test Review in packet"},
+      {"date": "10/9", "type": "test",  "name": "Chapter 3 Test", "reassess": false, "deadline": "10/15"},
+      {"date": "10/9", "type": "hw",    "name": "Chapters 2 & 3 Random HW Check (have all HW done)"},
+
+      {"date": "10/12", "type": "notes", "name": "4.2 Notes"},
+      {"date": "10/13", "type": "hw",    "name": "HW p. 202 (1-8, 15, 22)"},
+      {"date": "10/13", "type": "review","name": "4.1-4.2 Practice (Infinitely Retakable Quiz opens)"},
+      {"date": "10/13", "type": "notes", "name": "4.3 Notes"},
+      {"date": "10/14", "type": "hw",    "name": "HW p. 215 (1-6)"},
+      {"date": "10/14", "type": "event", "name": "PSAT"},
+      {"date": "10/15", "type": "quiz",  "name": "4.1-4.2 Quiz", "reassess": false, "deadline": "10/22"},
+      {"date": "10/15", "type": "notes", "name": "4.3 Notes"},
+      {"date": "10/20", "type": "hw",    "name": "HW pp. 215-216 (7-17 odd, 33-37 odd)"},
+
+      {"date": "10/20", "type": "quiz",  "name": "FCQ 6", "reassess": false, "deadline": "10/22"},
+      {"date": "10/20", "type": "notes", "name": "Finish 4.3 Notes"},
+      {"date": "10/21", "type": "hw",    "name": "AP Problems on Curve Sketching", "due": "10/22", "deadline": "10/23"},
+      {"date": "10/21", "type": "hw",    "name": "4.3 Worksheet"},
+      {"date": "10/21", "type": "event", "name": "UMD Math Competition Test"},
+      {"date": "10/22", "type": "notes", "name": "4.4 Notes and 4.6 Notes"},
+      {"date": "10/23", "type": "hw",    "name": "4.4 APs; Easy 4.6 Worksheet"},
+      {"date": "10/23", "type": "quiz",  "name": "4.3 Quiz", "reassess": true, "deadline": "10/27"},
+      {"date": "10/26", "type": "hw",    "name": "Watch 4.5 Video & Take Notes; p. 242 (1-13 odd)"},
+
+      {"date": "10/26", "type": "quiz",  "name": "FCQ 7", "reassess": false, "deadline": "10/28"},
+      {"date": "10/26", "type": "notes", "name": "Finish 4.6 Notes"},
+      {"date": "10/27", "type": "hw",    "name": "4.6 AP Problems (finish)"},
+      {"date": "10/28", "type": "review","name": "FRQ Activity; HW check for FCQ replacement eligibility"},
+      {"date": "10/28", "type": "quiz",  "name": "Infinitely Retakable Quiz (4.1-4.2) final deadline", "deadline": "10/28"},
+      {"date": "10/29", "type": "quiz",  "name": "4.6 Quiz", "reassess": false, "deadline": "11/5"},
+      {"date": "10/29", "type": "review","name": "Start Chapter 4 Test Review in packet"},
+      {"date": "10/29", "type": "notes", "name": "5.1 Notes"},
+      {"date": "10/30", "type": "hw",    "name": "5.1 / 5.5 WS"},
+      {"date": "10/30", "type": "hw",    "name": "FCQ Replacement Optional Assignments", "deadline": "10/30 2:30 PM"},
+      {"date": "10/30", "type": "notes", "name": "5.5 Notes"},
+      {"date": "11/4",  "type": "hw",    "name": "5.5 WS"},
+
+      {"date": "11/4",  "type": "review","name": "Finish Chapter 4 Test Review in packet"},
+      {"date": "11/4",  "type": "hw",    "name": "AP Classroom Unit 4 MCQ Progress Check", "reassess": false, "due": "11/4", "deadline": "11/5 7:45 AM"},
+      {"date": "11/5",  "type": "review","name": "Chapter 4 Test Review"},
+      {"date": "11/6",  "type": "test",  "name": "Chapter 4 Test", "reassess": false, "deadline": "11/11"},
+      {"date": "11/6",  "type": "hw",    "name": "Chapter 4 Random HW Check (have all HW done)"}
+    ]
+  }
+}
