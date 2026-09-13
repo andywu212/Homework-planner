@@ -13,13 +13,13 @@ body {
 }
 
 /* Pop-out collapse: animates height via grid-template-rows (no JS height
-   measurement needed) with a slight overshoot so panels feel like they
-   pop open rather than instantly appear. */
+   measurement needed). A smooth, symmetric ease (no bounce/overshoot)
+   at a deliberate pace reads as polished rather than snappy or toy-like. */
 .pop-collapse {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
-  transition: grid-template-rows 260ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 180ms ease-out;
+  transition: grid-template-rows 550ms cubic-bezier(0.4, 0, 0.2, 1), opacity 450ms ease-in-out;
 }
 .pop-collapse.pop-collapse-open {
   grid-template-rows: 1fr;
@@ -31,7 +31,7 @@ body {
 }
 
 .chevron {
-  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .chevron-open {
   transform: rotate(180deg);

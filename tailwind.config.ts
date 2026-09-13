@@ -22,16 +22,6 @@ const config: Config = {
         warn: "#e0a83a",
         bad: "#d9564a",
       },
-      keyframes: {
-        "pop-in": {
-          "0%": { opacity: "0", transform: "scale(0.96) translateY(-2px)" },
-          "60%": { opacity: "1", transform: "scale(1.01) translateY(0)" },
-          "100%": { opacity: "1", transform: "scale(1) translateY(0)" },
-        },
-      },
-      animation: {
-        "pop-in": "pop-in 220ms cubic-bezier(0.34, 1.56, 0.64, 1)",
-      },
     },
   },
   plugins: [],
