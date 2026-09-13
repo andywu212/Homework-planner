@@ -38,7 +38,7 @@ function UpcomingContent() {
 
   return (
     <div className="px-4 pt-6 pb-4 space-y-5">
-      <h1 className="text-xl font-semibold">Next 14 Days</h1>
+      <h1 className="text-[22px] font-medium text-text">Next 14 Days</h1>
       {grouped.length === 0 && <p className="text-sm text-muted py-8 text-center">Nothing due soon.</p>}
       {grouped.map(([classKey, items]) => (
         <div key={classKey} className="space-y-2">
@@ -51,7 +51,10 @@ function UpcomingContent() {
               const statusColor =
                 status === "in class" ? "text-muted" : status === "scheduled" ? "text-good" : "text-warn";
               return (
-                <div key={a.id} className="flex items-center justify-between gap-2 rounded-lg bg-surface border border-border px-3 py-2 text-sm">
+                <div
+                  key={a.id}
+                  className="flex items-center justify-between gap-2 rounded-lg bg-surface border border-border px-3 py-2 text-sm transition-colors duration-150 hover:border-[#3a3a3a] hover:bg-surface2"
+                >
                   <div className="min-w-0">
                     <p className="truncate">{a.title}</p>
                     <p className="text-xs text-muted">

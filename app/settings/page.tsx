@@ -45,12 +45,18 @@ function WindowEditor({
             onChange={(e) => update(i, "end", e.target.value)}
             className="bg-surface2 border border-border rounded-lg px-2 py-1.5 text-sm flex-1"
           />
-          <button onClick={() => remove(i)} className="text-bad text-xs px-2">
+          <button
+            onClick={() => remove(i)}
+            className="text-bad text-xs px-2 py-1 rounded transition-all duration-150 hover:bg-bad/10 active:scale-90"
+          >
             ✕
           </button>
         </div>
       ))}
-      <button onClick={add} className="text-xs text-accent">
+      <button
+        onClick={add}
+        className="text-xs text-accent rounded px-1 -mx-1 transition-all duration-150 hover:bg-accent/10 active:scale-95"
+      >
         + Add window
       </button>
     </div>
@@ -102,7 +108,7 @@ function SettingsContent() {
 
   return (
     <div className="px-4 pt-6 pb-4 space-y-6">
-      <h1 className="text-xl font-semibold">Settings</h1>
+      <h1 className="text-[22px] font-medium text-text">Settings</h1>
 
       <section className="space-y-3">
         <h2 className="text-xs font-semibold text-muted uppercase tracking-wide">Sync</h2>
@@ -113,7 +119,7 @@ function SettingsContent() {
           <button
             onClick={refresh}
             disabled={syncing}
-            className="text-sm rounded-lg bg-accent text-white px-3 py-1.5 disabled:opacity-50"
+            className="text-sm rounded-lg bg-accent text-white px-3 py-1.5 transition-all duration-150 hover:brightness-110 hover:shadow-[0_0_14px_-3px_rgba(192,57,43,0.7)] active:scale-95 disabled:opacity-50 disabled:hover:shadow-none"
           >
             {syncing ? "Syncing…" : "Refresh now"}
           </button>
@@ -153,7 +159,7 @@ function SettingsContent() {
                 <span className={`flex-1 text-sm ${hidden ? "text-muted line-through" : ""}`}>{c.name}</span>
                 <button
                   onClick={() => toggleHiddenClass(c.key)}
-                  className="text-xs rounded-full border border-border px-2 py-1 text-muted"
+                  className="text-xs rounded-full border border-border px-2 py-1 text-muted transition-all duration-150 hover:border-accent hover:text-accent active:scale-95"
                 >
                   {hidden ? "Show" : "Hide"}
                 </button>
@@ -169,7 +175,10 @@ function SettingsContent() {
           <p className="text-xs text-muted">
             The app learns your pace per class + assignment type from the &quot;how&apos;d it go&quot; buttons.
           </p>
-          <button onClick={resetMultipliers} className="text-xs rounded-full border border-border px-2.5 py-1">
+          <button
+            onClick={resetMultipliers}
+            className="text-xs rounded-full border border-border px-2.5 py-1 transition-all duration-150 hover:border-accent hover:text-accent active:scale-95"
+          >
             Reset learned estimates
           </button>
         </div>
@@ -194,10 +203,16 @@ function SettingsContent() {
             doesn&apos;t erase your streak.
           </p>
           <div className="flex gap-2">
-            <button onClick={handleExport} className="text-sm rounded-lg border border-border px-3 py-1.5">
+            <button
+              onClick={handleExport}
+              className="text-sm rounded-lg border border-border px-3 py-1.5 transition-all duration-150 hover:border-accent hover:text-accent active:scale-95"
+            >
               Export backup
             </button>
-            <button onClick={handleImportClick} className="text-sm rounded-lg border border-border px-3 py-1.5">
+            <button
+              onClick={handleImportClick}
+              className="text-sm rounded-lg border border-border px-3 py-1.5 transition-all duration-150 hover:border-accent hover:text-accent active:scale-95"
+            >
               Restore backup
             </button>
             <input ref={fileRef} type="file" accept="application/json" className="hidden" onChange={handleImportFile} />

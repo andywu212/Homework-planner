@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.46.0",
     "date-fns": "^3.6.0",
     "next": "14.2.35",
     "node-ical": "^0.27.1",

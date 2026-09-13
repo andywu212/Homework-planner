@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IconSun, IconCalendarWeek, IconClockHour4, IconSettings } from "@tabler/icons-react";
 
 const TABS = [
-  { href: "/", label: "Today", icon: "📋" },
-  { href: "/week", label: "Week", icon: "🗓️" },
-  { href: "/upcoming", label: "Upcoming", icon: "📌" },
-  { href: "/settings", label: "Settings", icon: "⚙️" },
+  { href: "/", label: "Today", Icon: IconSun },
+  { href: "/week", label: "Week", Icon: IconCalendarWeek },
+  { href: "/upcoming", label: "Upcoming", Icon: IconClockHour4 },
+  { href: "/settings", label: "Settings", Icon: IconSettings },
 ];
 
 export default function NavBar() {
@@ -15,18 +16,22 @@ export default function NavBar() {
   return (
     <nav className="fixed bottom-0 left-0 right-0 border-t border-border bg-surface pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto flex max-w-md">
-        {TABS.map((tab) => {
-          const active = pathname === tab.href;
+        {TABS.map(({ href, label, Icon }) => {
+          const active = pathname === href;
           return (
             <Link
-              key={tab.href}
-              href={tab.href}
-              className={`flex-1 flex flex-col items-center gap-0.5 py-2.5 text-xs ${
-                active ? "text-accent" : "text-muted"
+              key={href}
+              href={href}
+              className={`group flex-1 flex flex-col items-center gap-1 py-2.5 text-xs transition-colors duration-150 active:scale-95 ${
+                active ? "text-accent" : "text-muted hover:text-text"
               }`}
             >
-              <span className="text-lg leading-none">{tab.icon}</span>
-              {tab.label}
+              <Icon
+                size={21}
+                stroke={active ? 2.1 : 1.8}
+                className="transition-transform duration-150 group-hover:scale-110 group-active:scale-90"
+              />
+              {label}
             </Link>
           );
         })}

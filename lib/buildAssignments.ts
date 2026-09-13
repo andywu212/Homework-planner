@@ -169,6 +169,7 @@ function worldReadingQuizAssignments(canvasAssignments: Assignment[]): Assignmen
     );
     if (matched) {
       matched.linkedQuizDate = quizDate;
+      matched.urgency = "quiz";
       matched.blockCountHint = (matched.blockCountHint ?? 1) + 1;
       matched.totalMinutesBase += reviewMinutes;
       continue;
@@ -178,7 +179,7 @@ function worldReadingQuizAssignments(canvasAssignments: Assignment[]): Assignmen
       id: `world_quiz::${quizDate}`,
       source: "world_quiz",
       classKey: "world",
-      title: `Reading Quiz — ${q.sections}${q.label_uncertain ? " (unconfirmed)" : ""}`,
+      title: `Read ${q.sections}, take notes${q.label_uncertain ? " (unconfirmed)" : ""}`,
       category: "AT",
       reassessable: null,
       dueDate: quizDate,
