@@ -8,6 +8,7 @@ import { useSchedule } from "@/lib/useSchedule";
 import { classByKey } from "@/lib/seedData";
 import { addDaysISO, compareISO, monthDayLabel, todayISO } from "@/lib/dateUtils";
 import { ClassKey } from "@/lib/types";
+import SakuraHeader from "@/components/SakuraHeader";
 
 function UpcomingContent() {
   const { assignments, blocks, couldntFit } = useSchedule();
@@ -37,8 +38,9 @@ function UpcomingContent() {
   }, [upcoming]);
 
   return (
-    <div className="px-4 pt-6 pb-4 space-y-5">
-      <h1 className="text-[22px] font-medium text-text">Next 14 Days</h1>
+    <div className="relative isolate px-4 pt-6 pb-4 space-y-5">
+      <SakuraHeader height={130} />
+      <h1 className="relative text-[22px] font-medium text-text pt-2 [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]">Next 14 Days</h1>
       {grouped.length === 0 && <p className="text-sm text-muted py-8 text-center">Nothing due soon.</p>}
       {grouped.map(([classKey, items]) => (
         <div key={classKey} className="space-y-2">

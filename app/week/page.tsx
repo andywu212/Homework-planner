@@ -11,6 +11,7 @@ import { addDaysISO, todayISO, weekdayShort, monthDayLabel, isTodayISO } from "@
 import { Feedback } from "@/lib/types";
 import { groupBlocksByAssignment, pinnedEventTitle } from "@/lib/blockLabel";
 import { IconChevronDown, IconTarget, IconFlask2 } from "@tabler/icons-react";
+import SakuraHeader from "@/components/SakuraHeader";
 
 function WeekContent() {
   const { assignments, assignmentsById, blocks, doneBlocks } = useSchedule();
@@ -39,8 +40,9 @@ function WeekContent() {
   }
 
   return (
-    <div className="px-4 pt-6 pb-4 space-y-3">
-      <h1 className="text-[22px] font-medium text-text">This Week</h1>
+    <div className="relative isolate px-4 pt-6 pb-4 space-y-3">
+      <SakuraHeader height={130} />
+      <h1 className="relative text-[22px] font-medium text-text pt-2 [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]">This Week</h1>
       {days.map((day) => {
         const dayBlocks = blocks.filter((b) => b.date === day);
         const pinned = assignments.filter(

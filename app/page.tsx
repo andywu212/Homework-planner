@@ -70,16 +70,16 @@ function TodayContent() {
   }
 
   return (
-    <div className="relative px-4 pt-6 pb-4 space-y-4">
+    <div className="relative isolate px-4 pt-6 pb-4 space-y-4">
       <SakuraHeader />
 
       <header className="relative space-y-3 pt-2">
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-[13px] text-muted">
+            <p className="text-[13px] text-muted [text-shadow:0_1px_3px_rgba(0,0,0,0.7)]">
               {new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })}
             </p>
-            <h1 className="text-[22px] font-medium text-text mt-0.5">Today</h1>
+            <h1 className="text-[22px] font-medium text-text mt-0.5 [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]">Today</h1>
           </div>
           <button
             onClick={refresh}

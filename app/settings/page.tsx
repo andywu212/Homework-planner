@@ -6,6 +6,7 @@ import { useHomeworkStore } from "@/lib/store";
 import { useSchedule } from "@/lib/useSchedule";
 import { classes as allClasses } from "@/lib/seedData";
 import { TimeWindow } from "@/lib/types";
+import SakuraHeader from "@/components/SakuraHeader";
 
 function WindowEditor({
   label,
@@ -107,8 +108,9 @@ function SettingsContent() {
   }
 
   return (
-    <div className="px-4 pt-6 pb-4 space-y-6">
-      <h1 className="text-[22px] font-medium text-text">Settings</h1>
+    <div className="relative isolate px-4 pt-6 pb-4 space-y-6">
+      <SakuraHeader height={130} />
+      <h1 className="relative text-[22px] font-medium text-text pt-2 [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]">Settings</h1>
 
       <section className="space-y-3">
         <h2 className="text-xs font-semibold text-muted uppercase tracking-wide">Sync</h2>
