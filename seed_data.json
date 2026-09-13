@@ -25,7 +25,7 @@
 
   "estimate_defaults_minutes": {
     "calc": {"video_notes": 30, "problem_set": 45, "worksheet": 40, "fcq_prep": 20, "quiz_review_block": 30, "quiz_review_blocks": 2, "test_review_block": 45, "test_review_blocks": 4, "ap_classroom": 45},
-    "physics": {"pp_practice": 45, "pp_practice_blocks": 3, "lab_writeup": 75, "quiz_review_block": 30, "quiz_review_blocks": 2, "test_review_block": 45, "test_review_blocks": 4, "ap_classroom_weekly": 45},
+    "physics": {"pp_practice": 45, "pp_practice_blocks": 2, "lab_writeup": 75, "quiz_review_block": 30, "quiz_review_blocks": 2, "test_review_block": 45, "test_review_blocks": 4, "ap_classroom_weekly": 45},
     "micro": {"pp": 30, "at_application_problems": 50, "frq": 45, "test_review_block": 45, "test_review_blocks": 3},
     "world": {"reading_notes": 50, "quiz_review": 20, "at_project": 60},
     "lang": {"pp": 30, "at_short": 45, "essay_step": 45, "essay_final_draft": 90},
