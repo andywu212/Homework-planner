@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconSun, IconCalendarWeek, IconClockHour4, IconSettings } from "@tabler/icons-react";
+import { IconSun, IconCalendar, IconClockHour4, IconSettings } from "@tabler/icons-react";
 
 const TABS = [
   { href: "/", label: "Today", Icon: IconSun },
-  { href: "/week", label: "Week", Icon: IconCalendarWeek },
+  { href: "/week", label: "Calendar", Icon: IconCalendar },
   { href: "/upcoming", label: "Upcoming", Icon: IconClockHour4 },
   { href: "/settings", label: "Settings", Icon: IconSettings },
 ];

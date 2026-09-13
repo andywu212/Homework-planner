@@ -92,6 +92,29 @@ export function monthDayLabel(iso: string): string {
   return isoToDate(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+export function monthYearLabel(year: number, month0: number): string {
+  return new Date(year, month0, 1).toLocaleDateString(undefined, { month: "long", year: "numeric" });
+}
+
+export interface MonthCell {
+  iso: string;
+  day: number;
+  inMonth: boolean;
+}
+
+/** A fixed 6-week (42-cell) grid for `month0` (0-indexed), Sunday-first. */
+export function buildMonthGrid(year: number, month0: number): MonthCell[] {
+  const firstOfMonth = new Date(year, month0, 1);
+  const gridStart = new Date(year, month0, 1 - firstOfMonth.getDay());
+  const cells: MonthCell[] = [];
+  for (let i = 0; i < 42; i++) {
+    const d = new Date(gridStart);
+    d.setDate(gridStart.getDate() + i);
+    cells.push({ iso: dateToISO(d), day: d.getDate(), inMonth: d.getMonth() === month0 });
+  }
+  return cells;
+}
+
 export function isTodayISO(iso: string): boolean {
   return iso === todayISO();
 }
