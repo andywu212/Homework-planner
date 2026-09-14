@@ -11,8 +11,10 @@ import { useSchedule } from "@/lib/useSchedule";
 import { computePoints, computeStreak, todayProgress } from "@/lib/stats";
 import { todayISO } from "@/lib/dateUtils";
 import { groupBlocksByAssignment, pinnedEventTitle } from "@/lib/blockLabel";
+import { sortDoneToBottom } from "@/lib/blockOrder";
 import { useMemo, useState } from "react";
 import { Feedback } from "@/lib/types";
+import { motion } from "framer-motion";
 import {
   IconFlame,
   IconStarFilled,
@@ -33,6 +35,10 @@ function TodayContent() {
 
   const today = todayISO();
   const todaysBlocks = useMemo(() => blocks.filter((b) => b.date === today), [blocks, today]);
+  const orderedTodaysBlocks = useMemo(
+    () => sortDoneToBottom(todaysBlocks, doneBlocks),
+    [todaysBlocks, doneBlocks]
+  );
   const blockGroups = useMemo(() => groupBlocksByAssignment(blocks), [blocks]);
   const inClassToday = useMemo(
     () => assignments.filter((a) => a.inClass && a.dueDate === today),
@@ -161,23 +167,24 @@ function TodayContent() {
         {todaysBlocks.length === 0 && (
           <p className="text-sm text-muted py-8 text-center">Nothing scheduled today. Nice.</p>
         )}
-        {todaysBlocks.map((block) => {
+        {orderedTodaysBlocks.map((block) => {
           const assignment = assignmentsById.get(block.assignmentId);
           const group = blockGroups.get(block.id);
           if (!assignment || !group) return null;
           const rec = doneBlocks[block.id];
           return (
-            <BlockCard
-              key={block.id}
-              block={block}
-              assignment={assignment}
-              group={group}
-              done={!!rec}
-              feedback={rec?.feedback ?? null}
-              colorOverrides={colorOverrides}
-              onToggleDone={() => handleToggle(block.id)}
-              onFeedback={(fb) => handleFeedback(block.id, fb)}
-            />
+            <motion.div key={block.id} layout transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}>
+              <BlockCard
+                block={block}
+                assignment={assignment}
+                group={group}
+                done={!!rec}
+                feedback={rec?.feedback ?? null}
+                colorOverrides={colorOverrides}
+                onToggleDone={() => handleToggle(block.id)}
+                onFeedback={(fb) => handleFeedback(block.id, fb)}
+              />
+            </motion.div>
           );
         })}
       </div>

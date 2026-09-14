@@ -17,7 +17,9 @@ import {
 } from "@/lib/dateUtils";
 import { Feedback, ClassKey } from "@/lib/types";
 import { groupBlocksByAssignment, pinnedEventTitle } from "@/lib/blockLabel";
+import { sortDoneToBottom } from "@/lib/blockOrder";
 import { IconChevronLeft, IconChevronRight, IconTarget, IconFlask2 } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
 const WEEKDAY_LABELS = ["S", "M", "T", "W", "T", "F", "S"];
 
@@ -69,6 +71,10 @@ function CalendarContent() {
   }
 
   const selectedBlocks = useMemo(() => blocks.filter((b) => b.date === selectedDate), [blocks, selectedDate]);
+  const orderedSelectedBlocks = useMemo(
+    () => sortDoneToBottom(selectedBlocks, doneBlocks),
+    [selectedBlocks, doneBlocks]
+  );
   const selectedPinned = useMemo(
     () => assignments.filter((a) => !a.inClass && a.dueDate === selectedDate && (a.urgency === "test" || a.urgency === "quiz")),
     [assignments, selectedDate]
@@ -209,23 +215,24 @@ function CalendarContent() {
           {selectedBlocks.length === 0 && selectedPinned.length === 0 && selectedInClass.length === 0 && (
             <p className="text-sm text-muted py-6 text-center">Nothing scheduled.</p>
           )}
-          {selectedBlocks.map((block) => {
+          {orderedSelectedBlocks.map((block) => {
             const assignment = assignmentsById.get(block.assignmentId);
             const group = blockGroups.get(block.id);
             if (!assignment || !group) return null;
             const rec = doneBlocks[block.id];
             return (
-              <BlockCard
-                key={block.id}
-                block={block}
-                assignment={assignment}
-                group={group}
-                done={!!rec}
-                feedback={rec?.feedback ?? null}
-                colorOverrides={colorOverrides}
-                onToggleDone={() => toggle(block.id, block.date, block.index, block.minutes, block.assignmentId)}
-                onFeedback={(fb) => feedback(block.id, block.date, block.index, block.minutes, block.assignmentId, fb)}
-              />
+              <motion.div key={block.id} layout transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}>
+                <BlockCard
+                  block={block}
+                  assignment={assignment}
+                  group={group}
+                  done={!!rec}
+                  feedback={rec?.feedback ?? null}
+                  colorOverrides={colorOverrides}
+                  onToggleDone={() => toggle(block.id, block.date, block.index, block.minutes, block.assignmentId)}
+                  onFeedback={(fb) => feedback(block.id, block.date, block.index, block.minutes, block.assignmentId, fb)}
+                />
+              </motion.div>
             );
           })}
         </div>
